@@ -1,35 +1,89 @@
-
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FCNN Classifier</title>
+  <title>FCNN Diabetes Classifier</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>FCNN Classifier</h1>
-    <p>Enter features</p>
+    <h1>FCNN Diabetes</h1>
+    <p>Enter values:</p>
   </header>
 
   <main>
+    <!-- Single Predict -->
     <section class="card">
-      <label>Vector (comma-separated):</label>
-      <input id="features" type="text" placeholder="e.g. 0.12, 1.3, 0, 4, 2.2" />
-      <button id="predictBtn">Predict</button>
-      <button id="downloadBtn">Download CSV</button>
-      <div id="status"></div>
+      <h2>Single prediction</h2>
+      <form id="singleForm" class="grid">
+        <div class="field">
+          <label>Pregnancies</label>
+          <input type="number" step="1" id="Pregnancies" required />
+        </div>
+        <div class="field">
+          <label>Glucose</label>
+          <input type="number" step="1" id="Glucose" required />
+        </div>
+        <div class="field">
+          <label>BloodPressure</label>
+          <input type="number" step="1" id="BloodPressure" required />
+        </div>
+        <div class="field">
+          <label>SkinThickness</label>
+          <input type="number" step="1" id="SkinThickness" required />
+        </div>
+        <div class="field">
+          <label>Insulin</label>
+          <input type="number" step="1" id="Insulin" required />
+        </div>
+        <div class="field">
+          <label>BMI</label>
+          <input type="number" step="0.01" id="BMI" required />
+        </div>
+        <div class="field">
+          <label>DiabetesPedigreeFunction</label>
+          <input type="number" step="0.0001" id="DiabetesPedigreeFunction" required />
+        </div>
+        <div class="field">
+          <label>Age</label>
+          <input type="number" step="1" id="Age" required />
+        </div>
+      </form>
+      <div class="actions">
+        <button id="predictSingle">predict single</button>
+        <button id="addToBatch">Add to batch</button>
+      </div>
+      <div id="singleStatus" class="status"></div>
+      <pre id="singleResult">—</pre>
     </section>
 
+    <!-- Batch Predict -->
     <section class="card">
-      <h2>Result</h2>
-      <pre id="result">—</pre>
+      <h2>Batch prediction</h2>
+      <div class="batch-actions">
+        <button id="predictBatch">Batch</button>
+        <button id="clearBatch">Remove Batch</button>
+        <label class="fileLabel">
+          upload csv
+          <input type="file" id="csvInput" accept=".csv" hidden />
+        </label>
+        <a id="downloadCsv" class="btn" href="#">Download CSV</a>
+      </div>
+      <div id="batchStatus" class="status"></div>
+      <div class="table-wrap">
+        <table id="batchTable">
+          <thead>
+            <tr id="batchHeader"></tr>
+          </thead>
+          <tbody id="batchBody"></tbody>
+        </table>
+      </div>
     </section>
   </main>
 
   <footer>
-    <small>© FCNN Project</small>
+    <small>© FCNN Diabetes Project</small>
   </footer>
 
   <script src="script.js"></script>
