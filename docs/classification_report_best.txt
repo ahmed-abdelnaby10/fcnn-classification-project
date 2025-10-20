@@ -1,0 +1,8 @@
+Best model: build_model_1
+Accuracy: 0.7672
+Precision: 0.7333
+Recall: 0.5366
+F1: 0.6197
+
+Full classification report (dict):
+{'0': {'precision': 0.7790697674418605, 'recall': 0.8933333333333333, 'f1-score': 0.8322981366459627, 'support': 75.0}, '1': {'precision': 0.7333333333333333, 'recall': 0.5365853658536586, 'f1-score': 0.6197183098591549, 'support': 41.0}, 'accuracy': 0.7672413793103449, 'macro avg': {'precision': 0.756201550387597, 'recall': 0.7149593495934959, 'f1-score': 0.7260082232525589, 'support': 116.0}, 'weighted avg': {'precision': 0.7629043036621224, 'recall': 0.7672413793103449, 'f1-score': 0.7571621633851082, 'support': 116.0}}

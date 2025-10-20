@@ -1,0 +1,22 @@
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# Data & models
+data/processed/*.csv
+data/processed/*.pkl
+models/*.h5
+models/*.json
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Node/Frontend
+node_modules/
+
+# VSCode/IDE
+.vscode/
+.idea/
